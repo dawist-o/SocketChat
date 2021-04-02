@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="261.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dawist_o.client.controllers.LoginController">
+   <children>
+      <TextField fx:id="nameField" layoutX="55.0" layoutY="78.0" />
+      <Text layoutX="99.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" wrappingWidth="61.02667236328125">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="chatField" layoutX="56.0" layoutY="174.0" text="127.0.0.1" />
+      <Text layoutX="85.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chat IP" textAlignment="CENTER" wrappingWidth="91.69329833984375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="74.0" layoutY="327.0" mnemonicParsing="false" onAction="#onConnectButtonClicked" prefHeight="37.0" prefWidth="109.0" text="Join" />
+      <TextField fx:id="chatPort" layoutX="56.0" layoutY="251.0" text="4242" />
+      <Text layoutX="84.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chat port" textAlignment="CENTER" wrappingWidth="91.69329833984375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
