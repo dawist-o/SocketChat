@@ -1,6 +1,6 @@
 package com.dawist_o.client.controllers;
 
-import com.dawist_o.client.util.Client;
+import com.dawist_o.client.model.Client;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 

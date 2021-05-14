@@ -13,6 +13,7 @@ repositories {
 }
 
 mainClassName = 'ChatClient'
+
 javafx {
     version "14"
     modules = ['javafx.controls', 'javafx.fxml']

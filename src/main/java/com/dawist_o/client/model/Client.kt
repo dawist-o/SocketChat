@@ -1,4 +1,4 @@
-package com.dawist_o.client.util
+package com.dawist_o.client.model
 
 import java.io.Serializable
 

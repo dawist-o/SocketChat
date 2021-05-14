@@ -1,6 +1,6 @@
-package com.dawist_o.server;
+package com.dawist_o.server.back;
 
-import com.dawist_o.client.util.Message;
+import com.dawist_o.client.model.Message;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -10,29 +10,31 @@ import java.util.List;
 
 public class ChatServer {
     private List<ObjectOutputStream> outputStreams;
+    private int port;
 
-    public static void main(String[] args) {
-        new ChatServer().start();
+    public ChatServer(String ip, int port) {
+        this.port = port;
     }
 
-    public void start() {
+    public ChatServer() {
+        this.port = 4242;
+    }
+
+    public void start() throws IOException {
         outputStreams = new LinkedList<>();
-        try {
-            ServerSocket serverSocket = new ServerSocket(4242);
-            while (true) {
-                Socket socket = serverSocket.accept();
 
-                ObjectOutputStream writer = new ObjectOutputStream(socket.getOutputStream());
-                outputStreams.add(writer);
+        ServerSocket serverSocket = new ServerSocket(port);
+        while (true) {
+            Socket socket = serverSocket.accept();
 
-                Thread thread = new Thread(new ClientHandler(socket));
-                thread.start();
+            ObjectOutputStream writer = new ObjectOutputStream(socket.getOutputStream());
+            outputStreams.add(writer);
 
-                System.out.println("new client connected");
-            }
+            Thread thread = new Thread(new ClientHandler(socket));
+            thread.start();
 
-        } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("new client connected");
+
         }
     }
 
